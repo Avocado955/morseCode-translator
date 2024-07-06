@@ -1,0 +1,1 @@
+// This should test that the translate sentence and word functions work properly

@@ -13,7 +13,7 @@ const translateSentence = (sentence, currentLang) => {
     // Make a variable of which is the end language
     // Check if the sentence is valid for that language or is valid to be translated by the translator (currently not translating numbers or symbols)
     // If the sentence is already in the language to be translated to, return it
-    // break the sentence into words and pass into the translator
+    // break the sentence into words and pass into the word translator
     // rejoin the sentence with either spaces if English or "/" if morse code
     // return the sentence
 }

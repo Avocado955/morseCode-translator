@@ -6,6 +6,15 @@ body {
   height: 100vh;
 }
 
+.instructions {
+  width: 40%;
+  margin-bottom: 10px;
+
+  &--heading {
+    text-decoration: underline;
+  }
+}
+
 .container {
   @include m.flex-display(column, flex-start, center, nowrap);
   padding: 1em;
@@ -43,6 +52,7 @@ body {
 
 .mainHeading {
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-size: 3em;
   margin-bottom: 5px;
 }
 
