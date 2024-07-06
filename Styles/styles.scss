@@ -1,0 +1,11 @@
+@use "./partials/mixins" as m;
+
+body {
+  @include m.flex-display(column, flex-start, center, nowrap);
+  text-align: center;
+  height: 100vh;
+}
+
+.mainHeading {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
