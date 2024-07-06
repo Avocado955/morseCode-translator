@@ -11,23 +11,26 @@
     <h1 class="mainHeading">Morse Code Translator</h1>
     <div class="container">
       <div class="inputArea">
-        <h3 class="subHeading">Enter String Here:</h3>
-        <textarea
-          name="english"
-          id="tAE"
-          class="textArea"
-          placeholder="Type in the string you wish to be converted to Morse Code"
-        ></textarea>
-      </div>
-      <div class="inputArea">
-        <h3 class="subHeading">Enter Morse Code Here:</h3>
-        <textarea
+        <div class="inputArea--section">
+          <h3 class="subHeading">Enter String Here:</h3>
+          <textarea
+            name="english"
+            id="tAE"
+            class="textArea"
+            placeholder="Type in the string you wish to be converted to Morse Code"
+          ></textarea>
+        </div>
+        <div class="inputArea--section">
+          <h3 class="subHeading">Enter Morse Code Here:</h3>
+          <textarea
           name="morseCode"
           id="tAM"
           class="textArea"
           placeholder="Type in the Morse Code you wish to be conveted to English using '.' and '-' with space between letters and '/' between words"
-        ></textarea>
+          ></textarea>
+        </div>
       </div>
+      <button>Translate</button>
     </div>
   </body>
 </html>

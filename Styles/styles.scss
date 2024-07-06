@@ -7,19 +7,27 @@ body {
 }
 
 .container {
-  @include m.flex-display(row, flex-start, flex-start, nowrap);
+  @include m.flex-display(column, flex-start, center, nowrap);
   padding: 1em;
   gap: 1em;
-  min-height: 400px;
+  height: 50%;
+  width: 50%;
   border: 2px solid black;
 }
 
 .inputArea {
-  @include m.flex-display(column, center, flex-start, nowrap);
-  min-width: 300px;
+  @include m.flex-display(row, center, flex-start, nowrap);
   height: 100%;
+  width: 100%;
   border-radius: 5px;
   box-shadow: inset 1px 1px 6px rgba(0, 0, 0, 0.2);
+  gap: 1em;
+
+  &--section {
+    @include m.flex-display(column, flex-start, flex-start, nowrap);
+    height: 100%;
+    width: 100%;
+  }
 }
 
 .textArea {
