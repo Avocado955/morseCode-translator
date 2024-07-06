@@ -1,4 +1,4 @@
-{
+const translationObject = {
   "A": ".-",
   "B": "-...",
   "C": "-.-.",
