@@ -9,7 +9,6 @@ import translationObject from "../data/translation";
  * @returns {string} A new string with the word translated into the given translateTo
  */
 export const translateWords = (word, translateTo) => {
-  console.log(translationObject);
   // As the parent function checks if it is already translated, dont need to check again
   // check if translateTo is valid
   if (translateTo !== "eng" && translateTo !== "morse") {
@@ -17,24 +16,26 @@ export const translateWords = (word, translateTo) => {
       "Invalid Translate language. The provided language to be translated to was not English or Morse Code"
     );
   }
-  // break apart the sentence and translate it
-  // split it
-  // This doesnt work outside of the if statement cause each morse code would be broken into individual '.'s and '-'s which only returns e and t
-  const letterArr = word.split("");
   // map it
   if (translateTo === "eng") {
+    // break apart the sentence and translate it
+    // split it at the space between words
+    const letterArr = word.split(" ");
+    // This doesnt work outside of the if statement cause each morse code would be broken into individual '.'s and '-'s which only returns e and t
     // take in Morse Code and translate to English
     const engTranslated = letterArr.map((morseLetter) => {
       // need to get the key as it holds the English letter. using the value we check each of the keys
       const englishLetter = Object.keys(translationObject).find(
         (key) => translationObject[key] === morseLetter
       );
-      console.log(englishLetter);
       return englishLetter;
     });
     // join it
     return engTranslated.join("");
   } else {
+    // break apart the words and translate it
+    // split it at each letter
+    const letterArr = word.split("");
     // take in English and translate to Morse Code
     const morseTranslated = letterArr.map((englishLetter) => {
       return translationObject[englishLetter.toUpperCase()];

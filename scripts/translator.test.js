@@ -1,6 +1,8 @@
 // This should test that the translate sentence and word functions work properly
 
-import test from "node:test";
+const errorMessage =
+  "Invalid Translate language. The provided language to be translated to was not English or Morse Code";
+
 import { translateWords } from "./translator";
 
 describe("Tests the functionality of the translateWord function for the morse code translator", () => {
@@ -22,12 +24,21 @@ describe("Tests the functionality of the translateWord function for the morse co
         ".... . .-.. .-.. --- / .... --- .-- / .- .-. . / -.-- --- ..-",
         "eng"
       )
-    ).toBe("Hello how are you");
+    ).toBe("HELLO HOW ARE YOU");
     expect(
       translateWords(".-- .... .- - / .. ... / - .... .. ...", "eng")
-    ).toBe("what is this");
+    ).toBe("WHAT IS THIS");
     expect(translateWords("-. .. -.-. . / .-- --- .-. -.-", "eng")).toBe(
-      "nice work"
+      "NICE WORK"
     );
+  });
+
+  it("Throws an error when the given translateTo parameter is null or incorrect", () => {
+    expect(() => {
+      translateWords("hello", 12);
+    }).toThrow(errorMessage);
+    expect(() => {
+      translateWords("oh yes", "french");
+    }).toThrow(errorMessage);
   });
 });
