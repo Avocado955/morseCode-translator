@@ -4,15 +4,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./Style/style.css" />
-    <script type="module" src="./scripts/script.js"></script>
+    <script type="module" src="./scripts/script.js" defer></script>
     <title>Morse Code Translator</title>
   </head>
   <body>
     <h1 class="mainHeading">Morse Code Translator</h1>
+    <hr style="width: 100%" />
     <div class="instructions">
       <h2 class="instructions--heading">Instructions</h2>
       <p>
-        Type the sentence to be translated into the approprate text box, if both text boxes have text, the last used text box will be the one translated and the translation will be displayed in the other text box
+        Type the sentence to be translated into the approprate text box, if both
+        text boxes have text, the last used text box clicked on will be the one
+        translated and the translation will be displayed in the other text box.
+        <br />
+        English translated from Morse Code will always be in capitals
       </p>
     </div>
     <div class="container">
@@ -29,14 +34,15 @@
         <div class="inputArea--section">
           <h3 class="subHeading">Enter Morse Code Here:</h3>
           <textarea
-          name="morseCode"
-          id="tAM"
-          class="textArea"
-          placeholder="Type in the Morse Code you wish to be conveted to English using '.' and '-' with space between letters and '/' between words"
+            name="morseCode"
+            id="tAM"
+            class="textArea"
+            placeholder="Type in the Morse Code you wish to be conveted to English using '.' and '-' with space between letters and '/' between words"
           ></textarea>
         </div>
       </div>
-      <button>Translate</button>
+      <div class="errorMessage" id="errorMessage"></div>
+      <button id="translateBtn" class="btn">Translate</button>
     </div>
   </body>
 </html>

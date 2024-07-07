@@ -1,23 +1,22 @@
 // This script should handle the translation of morse code and english depending on the given condition
-// The function should be given a full string of either English or Morse code and send it word by word to be translated and then display the translation
-import translationObject from "../data/translation";
+// The function should be given a full string of either English or Morse code and go over it word by word and then display the translation
+import translationObject from "../data/translation.js";
 
 // After running a test and realising that this function works with a whole string and not just a word
 /**
  * @param {string} word - The word which should be translated in either English or Morse Code
- * @param {string} translateTo - Which way the word should be translated, either "eng" or "morse" respectively
+ * @param {string} translateTo - Which way the word should be translated, either "english" or "morse" respectively
  * @returns {string} A new string with the word translated into the given translateTo
  */
-export const translateWords = (word, translateTo) => {
-  // As the parent function checks if it is already translated, dont need to check again
+const translateWords = (word, translateTo) => {
   // check if translateTo is valid
-  if (translateTo !== "eng" && translateTo !== "morse") {
+  if (translateTo !== "english" && translateTo !== "morse") {
     throw new Error(
       "Invalid Translate language. The provided language to be translated to was not English or Morse Code"
     );
   }
   // map it
-  if (translateTo === "eng") {
+  if (translateTo === "english") {
     // break apart the sentence and translate it
     // split it at the space between words
     const letterArr = word.split(" ");
@@ -45,3 +44,5 @@ export const translateWords = (word, translateTo) => {
     return morseTranslated.join(" ");
   }
 };
+
+export default translateWords;

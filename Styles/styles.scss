@@ -3,7 +3,7 @@
 body {
   @include m.flex-display(column, flex-start, center, nowrap);
   text-align: center;
-  height: 100vh;
+  height: 90vh;
 }
 
 .instructions {
@@ -50,10 +50,37 @@ body {
   resize: none;
 }
 
+.btn {
+  background-color: #0a0a23;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 1em;
+  min-width: 150px;
+  min-height: 30px;
+  font-size: large;
+
+  &:hover {
+    background-color: #002ead;
+  }
+
+  &:active {
+    background-color: #ffbf00;
+  }
+}
+
+.errorMessage {
+  background-color: red;
+  color: white;
+}
+
+.msg {
+  //Empty class for removing when added to the DOM
+}
+
 .mainHeading {
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   font-size: 3em;
-  margin-bottom: 5px;
 }
 
 .subHeading {

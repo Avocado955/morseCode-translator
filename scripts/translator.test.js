@@ -3,7 +3,7 @@
 const errorMessage =
   "Invalid Translate language. The provided language to be translated to was not English or Morse Code";
 
-import { translateWords } from "./translator";
+import translateWords from "./translator.js";
 
 describe("Tests the functionality of the translateWord function for the morse code translator", () => {
   test("Given a valid string in English, will return the correct string in Morse Code", () => {
@@ -22,15 +22,21 @@ describe("Tests the functionality of the translateWord function for the morse co
     expect(
       translateWords(
         ".... . .-.. .-.. --- / .... --- .-- / .- .-. . / -.-- --- ..-",
-        "eng"
+        "english"
       )
     ).toBe("HELLO HOW ARE YOU");
     expect(
-      translateWords(".-- .... .- - / .. ... / - .... .. ...", "eng")
+      translateWords(".-- .... .- - / .. ... / - .... .. ...", "english")
     ).toBe("WHAT IS THIS");
-    expect(translateWords("-. .. -.-. . / .-- --- .-. -.-", "eng")).toBe(
+    expect(translateWords("-. .. -.-. . / .-- --- .-. -.-", "english")).toBe(
       "NICE WORK"
     );
+    expect(
+      translateWords(
+        ".-- .... . -. / .- .-. . / -.-- --- ..- / -- . .- -. - / - --- / -... . / .... . .-. .",
+        "english"
+      )
+    ).toBe("WHEN ARE YOU MEANT TO BE HERE");
   });
 
   it("Throws an error when the given translateTo parameter is null or incorrect", () => {
