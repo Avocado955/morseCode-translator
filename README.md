@@ -1,5 +1,7 @@
 # Morse Code Translator
 
+[**Live Site**](https://morse-code-translator-bice.vercel.app/)
+
 ## MVP
 
 - Create a user interface that allows the user to either input some English text or some Morse Code
