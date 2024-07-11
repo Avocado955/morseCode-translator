@@ -20,11 +20,13 @@ const translateWords = (word, translateTo) => {
     // break apart the sentence and translate it
     // split it at the space between words
     const letterArr = word.split(" ");
+    //grab all the keys outside of the map
+    const keys = Object.keys(translationObject);
     // This doesnt work outside of the if statement cause each morse code would be broken into individual '.'s and '-'s which only returns e and t
     // take in Morse Code and translate to English
     const engTranslated = letterArr.map((morseLetter) => {
       // need to get the key as it holds the English letter. using the value we check each of the keys
-      const englishLetter = Object.keys(translationObject).find(
+      const englishLetter = keys.find(
         (key) => translationObject[key] === morseLetter
       );
       return englishLetter;

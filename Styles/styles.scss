@@ -25,6 +25,7 @@ body {
 }
 
 .inputArea {
+  // need to make the input area a column if the screen is small
   @include m.flex-display(row, center, flex-start, nowrap);
   height: 100%;
   width: 100%;
