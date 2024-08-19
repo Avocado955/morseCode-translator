@@ -31,7 +31,7 @@ body {
 
 .inputArea {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: flex-start;
   flex-wrap: nowrap;
@@ -40,6 +40,16 @@ body {
   border-radius: 5px;
   box-shadow: inset 1px 1px 6px rgba(0, 0, 0, 0.2);
   gap: 1em;
+}
+@media only screen and (min-width: 770px) {
+  .inputArea {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+    gap: 2em;
+  }
 }
 .inputArea--section {
   display: flex;
@@ -54,12 +64,17 @@ body {
 .textArea {
   box-sizing: border-box;
   width: 100%;
-  height: 100%;
+  height: 50px;
   box-shadow: inset 1px 1px 6px rgba(0, 0, 0, 0.2);
   outline: none;
   border: none;
   border-radius: 5px;
   resize: none;
+}
+@media only screen and (min-width: 770px) {
+  .textArea {
+    height: 100%;
+  }
 }
 
 .btn {

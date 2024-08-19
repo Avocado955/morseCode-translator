@@ -1,3 +1,5 @@
+@use './variables' as v;
+
 @mixin flex-display(
   $direction: column,
   $justify: center,
@@ -9,4 +11,35 @@
   justify-content: $justify;
   align-items: $align;
   flex-wrap: $wrap;
+}
+
+// Media Queries
+@mixin sm-screen {
+  @media only screen and (min-width: v.$sm) {
+    @content;
+  }
+}
+
+@mixin md-screen {
+  @media only screen and (min-width: v.$md) {
+    @content;
+  }
+}
+
+@mixin lg-screen {
+  @media only screen and (min-width: v.$lg) {
+    @content;
+  }
+}
+
+@mixin xl-screen {
+  @media only screen and (min-width: v.$xl) {
+    @content;
+  }
+}
+
+@mixin xxl-screen {
+  @media only screen and (min-width: v.$xxl) {
+    @content;
+  }
 }
